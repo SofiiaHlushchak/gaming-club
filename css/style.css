@@ -432,30 +432,33 @@ body {
 }
 
 .section-best-place {
+  display: -ms-grid;
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   grid-template-rows: 40vw;
   background: #101D2C;
 }
 .section-best-place__left-side {
+  display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(24, 1fr);
   background: url(../img/section-best-place-background.jpg) center/cover no-repeat;
 }
 .section-best-place__left-side_photo-first {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  height: auto;
   object-fit: cover;
   grid-column: 3/15;
   grid-row: 3/16;
 }
 .section-best-place__left-side_photo-second {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  height: auto;
   object-fit: cover;
   grid-column: 5/-1;
   grid-row: 10/23;
+  -webkit-transform: translateX(3.5rem);
   transform: translateX(3.5rem);
 }
 .section-best-place__right-side {
@@ -468,15 +471,18 @@ body {
     grid-template-rows: 50vw;
   }
   .section-best-place__left-side_photo-first {
+    width: 100%;
+    height: auto;
     grid-column: 3/10;
     grid-row: 3/16;
   }
   .section-best-place__left-side_photo-second {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     grid-column: 8/15;
     grid-row: 10/23;
+    -webkit-transform: translateX(0);
     transform: translateX(0);
   }
   .section-best-place__right-side {
@@ -574,4 +580,4 @@ body {
 .section-gallery__item-14 {
   grid-row: 6/8;
   grid-column: 8/9;
-}/*# sourceMappingURL=style.css.map */
+}
