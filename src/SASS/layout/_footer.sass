@@ -1,0 +1,17 @@
+.footer
+    text-align: center
+    padding: 8rem 12.5rem
+    background: #101D2C
+    border-top: 3px solid #F5F5F5
+    &__list
+        display: flex
+        justify-content: space-between
+        margin-top: 8rem 
+    @include respond(tab-port)
+        padding: 5rem 3rem
+    @include respond(phone)
+        &__list
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            grid-gap: 2rem
+            

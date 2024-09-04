@@ -1,0 +1,78 @@
+.side-bar
+    min-width: 8rem
+    background-color: #425844
+    position: relative
+    &__checkbox
+        position: absolute
+        display: block
+        height: 2.4rem
+        width: 3.2rem
+        top: 2rem
+        left: 2.4rem
+        z-index: 1000
+        opacity: 0
+        cursor: pointer
+    &__checkbox:checked ~ &__menu
+        transform: translateX(0rem)
+    &__checkbox:checked ~ &__hamburger
+        position: fixed
+    &__checkbox:checked ~ &__hamburger .line2
+        transform: scaleY(0)
+    &__checkbox:checked ~ &__hamburger .line1
+        transform: rotate(45deg)
+    &__checkbox:checked ~ &__hamburger .line3
+        transform: rotate(-45deg)
+    &__hamburger
+        position: absolute
+        height: 2.4rem
+        width: 3.2rem
+        top: 2rem
+        left: 2.4rem
+        transition: all 0.2s ease-in-out
+        z-index: 100
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        .line
+            display: block
+            height: .2rem
+            width: 100%
+            border-radius: 1rem
+            background: #F5F5F5
+        .line1
+            transform-origin: 0% 0%
+            transition: transform 0.4s ease-in-out
+        .line2 
+            transition: transform 0.2s ease-in-out
+        .line3
+            transform-origin: 0% 100%
+            transition: transform 0.4s ease-in-out
+    &__menu
+        position: fixed
+        transform: translate(-150%)
+        width: 28rem
+        height: 100vh
+        transition: transform .5s ease-out
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        background: #425844
+        a:not(:last-child)
+            margin-bottom: 3rem 
+
+    @include respond(tab-land)
+        width: 100%
+        height: 6rem
+        &__checkbox
+            left: auto
+            right: 2.4rem
+        &__hamburger
+            left: auto
+            right: 2.4rem
+        &__menu
+            transform: translateY(-150%)
+            width: 100%
+            height: 30vh
+            z-index: 99
+        
